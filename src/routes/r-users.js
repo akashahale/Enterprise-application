@@ -1,0 +1,11 @@
+const express = require('express');
+const app = express();
+const UserController = require('../controllers/userController');
+app.post("/idm/api/users",UserController.createUser);
+app.get("/idm/api/users/list",UserController.listUsers);
+app.post("/idm/api/roles",UserController.createRole);
+app.get("/idm/api/roles",UserController.getRoles);
+app.get("/idm/api/roles/:role_id",UserController.getRoleById);
+app.put("/idm/api/roles",UserController.updateRole);
+app.delete("/idm/api/roles/:role_id",UserController.deleteRoleById);
+module.exports = app;
